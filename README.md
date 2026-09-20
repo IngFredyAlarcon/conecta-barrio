@@ -29,3 +29,21 @@ La aplicación es funcional respetando el alcance definido y MVP y dando cumplim
 ## Flujo MVP
 ![alt text](image.png)
 
+
+# IMPLEMENTACIÓN DEL MVP
+
+## Parte 1 Preparar el entorno y crear el proyecto
+### Node version:
+![alt text](image-1.png)
+
+### Npm version:
+![alt text](image-2.png)
+
+### Ng version:
+![alt text](image-3.png)
+
+### Servidor en ejecución:
+![alt text](image-4.png)
+
+## Parte 2 Crear la estructura sin convertirla en una receta
+
