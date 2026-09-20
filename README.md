@@ -47,3 +47,7 @@ La aplicación es funcional respetando el alcance definido y MVP y dando cumplim
 
 ## Parte 2 Crear la estructura sin convertirla en una receta
 
+![alt text](image-5.png)
+
+
+## Parte 3 Diseñar una identidad visual coherente
