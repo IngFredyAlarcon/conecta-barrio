@@ -1,1 +1,27 @@
-<p>solicitud-card works!</p>
+<article class="solicitud-card">
+
+  <header class="solicitud-card__header">
+
+    <h3 class="solicitud-card__title">
+      {{ solicitud().title }}
+    </h3>
+
+  </header>
+
+  <p class="solicitud-card__description">
+    {{ solicitud().body }}
+  </p>
+
+  <footer class="solicitud-card__footer">
+
+    <span class="solicitud-card__id">
+      Solicitud #{{ solicitud().id }}
+    </span>
+
+    <button class="solicitud-card__button">
+      Ver solicitud
+    </button>
+
+  </footer>
+
+</article>

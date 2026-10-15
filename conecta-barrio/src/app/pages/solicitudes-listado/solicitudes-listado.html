@@ -1,1 +1,48 @@
-<p>solicitudes-listado works!</p>
+<section class="solicitudes">
+  <header class="solicitudes__header">
+    <div>
+      <p class="solicitudes__eyebrow">RedManos</p>
+
+      <h1 class="solicitudes__title">Solicitudes</h1>
+
+      <p class="solicitudes__description">
+        Consulta y realiza seguimiento a las solicitudes de la comunidad.
+      </p>
+    </div>
+
+    <a class="solicitudes__new-button" routerLink="/solicitudes/nueva"> + Nueva solicitud </a>
+  </header>
+
+  <div class="solicitudes__toolbar">
+    <label class="solicitudes__search-label" for="busqueda"> Buscar solicitudes </label>
+
+    <input
+      id="busqueda"
+      type="search"
+      placeholder="Buscar por título..."
+      [value]="busqueda()"
+      (input)="busqueda.set($any($event.target).value)"
+    />
+  </div>
+
+  @if (cargando()) {
+    <p class="estado-carga">Cargando solicitudes desde el servidor...</p>
+  }
+
+  @if (error()) {
+    <p class="estado-error">{{ error() }}</p>
+  }
+
+  @if (!cargando() && !error()) {
+    <div class="solicitudes__grid">
+      @for (solicitud of solicitudesFiltradas(); track solicitud.id) {
+        <app-solicitud-card [solicitud]="solicitud"> </app-solicitud-card>
+      } @empty {
+        <div class="solicitudes__empty">
+          <h2>No encontramos solicitudes</h2>
+          <p>Prueba con otro término de búsqueda.</p>
+        </div>
+      }
+    </div>
+  }
+</section>

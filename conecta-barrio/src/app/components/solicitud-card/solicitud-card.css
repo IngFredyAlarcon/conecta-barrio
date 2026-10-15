@@ -1,0 +1,179 @@
+:host {
+  display: block;
+}
+
+.solicitud-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  padding: var(--space-5);
+
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Efecto al pasar el mouse */
+.solicitud-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* -------------------------
+   Encabezado
+   ------------------------- */
+
+.solicitud-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.solicitud-card__title {
+  margin: 0;
+
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+}
+
+/* -------------------------
+   Contenido
+   ------------------------- */
+
+.solicitud-card__description {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+
+  /* Evita tarjetas demasiado altas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* -------------------------
+   Información
+   ------------------------- */
+
+.solicitud-card__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* -------------------------
+   Badges / etiquetas
+   ------------------------- */
+
+.solicitud-card__badge {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+  padding: var(--space-1) var(--space-2);
+
+  border-radius: var(--radius-full);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Estado */
+.solicitud-card__badge--pending {
+  color: var(--color-warning);
+  background-color: var(--color-warning-light);
+}
+
+.solicitud-card__badge--completed {
+  color: var(--color-success);
+  background-color: var(--color-success-light);
+}
+
+.solicitud-card__badge--progress {
+  color: var(--color-info);
+  background-color: var(--color-info-light);
+}
+
+/* -------------------------
+   Pie de tarjeta
+   ------------------------- */
+
+.solicitud-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding-top: var(--space-3);
+
+  border-top: 1px solid var(--color-border-light);
+}
+
+.solicitud-card__id {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+/* -------------------------
+   Botón
+   ------------------------- */
+
+.solicitud-card__button {
+  min-height: 40px;
+  padding: var(--space-2) var(--space-4);
+
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary);
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+
+  transition: background-color 0.2s ease;
+}
+
+.solicitud-card__button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.solicitud-card__button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* -------------------------
+   Móvil
+   ------------------------- */
+
+@media (max-width: 640px) {
+  .solicitud-card {
+    padding: var(--space-4);
+  }
+
+  .solicitud-card__header {
+    flex-direction: column;
+  }
+
+  .solicitud-card__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .solicitud-card__button {
+    width: 100%;
+  }
+}

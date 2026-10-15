@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
+import { Solicitud } from '../../../models/solicitud.model';
 
 @Component({
   imports: [],
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './solicitud-card.css',
   templateUrl: './solicitud-card.html',
 })
-export class SolicitudCard {}
+export class SolicitudCard {
+  @Input() id = 0;
+  @Input() userId = 0;
+  @Input() title = '';
+  @Input() body = '';
+
+  solicitud = input.required<Solicitud>();
+}
